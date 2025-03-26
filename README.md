@@ -51,4 +51,4 @@ chmod +x deploy-postgres-backup-restore.sh
 
 ## debug pod
 - The pg-client.yaml can be directly applied for debugging purposes of database if backup and restore mechanism is not required. 
-- kubectl apply -f pg-client.yaml
+- `kubectl apply -f pg-client.yaml`
