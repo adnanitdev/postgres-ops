@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pg-dump
+spec:
+  restartPolicy: Never
+  containers:
+    - name: pg-dump
+      image: postgres:15
+      command: ["/bin/sh", "-c"]
+      args:
+        - |
+          pg_dump --dbname="{{ .Values.source.uri }}" > /dump/db.sql &&
+          echo "Dump completed!" &&
+          sleep infinity
+      volumeMounts:
+        - name: dump-volume
+          mountPath: /dump
+  volumes:
+    - name: dump-volume
+      emptyDir: {}

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pg-restore
+  namespace: {{ .Values.restore.namespace }}
+spec:
+  restartPolicy: Never
+  containers:
+    - name: pg-restore
+      image: postgres:15
+      command: [ "sleep", "infinity" ]

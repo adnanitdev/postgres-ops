@@ -1,0 +1,6 @@
+source:
+  uri: "postgresql://<user>:<password>@<source-host>:5432/<db>"
+
+restore:
+  namespace: "postgres-restore"
+  uri: "postgresql://<user>:<password>@<target-host>:5432/<db>"
