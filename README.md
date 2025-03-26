@@ -49,3 +49,6 @@ chmod +x deploy-postgres-backup-restore.sh
 - PostgreSQL access
 - `yq` installed (`brew install yq` or `apt install yq`)
 
+## debug pod
+- The pg-client.yaml can be directly applied for debugging purposes of database if backup and restore mechanism is not required. 
+- kubectl apply -f pg-client.yaml
